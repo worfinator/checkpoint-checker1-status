@@ -1,0 +1,7 @@
+- debug:
+    var: checkpoint_info
+
+- name: update checkpoint info
+  set_fact:
+    passed_devices: "{{ passed_devices + [checkpoint] if checkpoint_info.passed == True else passed_devices }}"
+    failed_devices: "{{ failed_devices + [checkpoint] if checkpoint_info.passed == False else failed_devices }}"

@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - checkpoint-checker1-status
+    

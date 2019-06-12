@@ -1,0 +1,19 @@
+---
+- name: test
+  debug:
+    msg: " my checkpoint: {{ checkpoint }}"
+
+- name: set Defaults
+  set_fact:
+    checkpoint_info: "{{ checkpoints_results[checkpoint] }}"
+  no_log: True
+
+#- name: before
+#  debug:
+#    var: checkpoint_info
+
+- include: blades.yml
+
+#- name: after
+#  debug:
+#    var: checkpoint_info
